@@ -86,7 +86,7 @@ Useful next validation: a separately authored paraphrase test set for live extra
 
 Deploy `public_app.py` (not `app.py`) on Streamlit Community Cloud. It forces offline mode even if a Groq key is present, does not load `.env`, and removes the live mode control. Do not upload any secrets for this public demo.
 
-Settings: repository `b-amit11/returndesk`, branch `main`, entrypoint `public_app.py`, Python 3.12. The repository must exist before deployment. The public demo demonstrates policy decisions and human review; it does not claim to run a live model.
+Settings: repository `b-amit11/return-desk`, branch `main`, entrypoint `public_app.py`, Python 3.12. The repository must exist before deployment. The public demo demonstrates policy decisions and human review; it does not claim to run a live model.
 
 To preview this exact entrypoint locally:
 
