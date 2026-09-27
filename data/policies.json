@@ -1,0 +1,11 @@
+{
+  "publisher": "ReturnDesk fictional demo store",
+  "version": "2026-09-01",
+  "clauses": [
+    {"id":"P1","title":"Standard returns","text":"Delivered items may be returned within 30 calendar days after delivery, inclusive. Unopened items and opened items in original condition qualify. Used items require human review. The delivery date is day zero."},
+    {"id":"P2","title":"Damaged deliveries","text":"Damage reported within 7 calendar days after delivery, inclusive, requires human review and a photo before a refund decision. After day 7, damage claims require human review as an exception. Do not automatically deny or approve damage claims."},
+    {"id":"P3","title":"Final sale","text":"Final-sale items are not eligible for a change-of-mind return. Damage claims on final-sale items still follow P2."},
+    {"id":"P4","title":"Identity and order status","text":"Only orders belonging to the authenticated customer may be reviewed. Missing orders require clarification. Undelivered orders, cancelled orders, already refunded orders, and invalid delivery dates require human review. Never disclose another customer's order details."},
+    {"id":"P5","title":"Human authorization","text":"All outcomes are recommendations. A support agent must approve any customer response. This demo never sends messages, issues refunds, or changes an order. Missing return reason requires clarification. Missing condition requires clarification before approving a standard return."}
+  ]
+}

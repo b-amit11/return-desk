@@ -1,0 +1,188 @@
+{
+  "mode": "offline parser and deterministic policy rules",
+  "passed": 30,
+  "total": 30,
+  "limitations": "Developer-authored cases. Does not measure LLM extraction accuracy, real store policy correctness, or business impact.",
+  "cases": [
+    {
+      "case": "standard unopened",
+      "expected": "eligible",
+      "actual": "eligible",
+      "passed": true
+    },
+    {
+      "case": "standard original",
+      "expected": "eligible",
+      "actual": "eligible",
+      "passed": true
+    },
+    {
+      "case": "used",
+      "expected": "human_review",
+      "actual": "human_review",
+      "passed": true
+    },
+    {
+      "case": "missing condition",
+      "expected": "clarify",
+      "actual": "clarify",
+      "passed": true
+    },
+    {
+      "case": "missing reason",
+      "expected": "clarify",
+      "actual": "clarify",
+      "passed": true
+    },
+    {
+      "case": "missing order",
+      "expected": "clarify",
+      "actual": "clarify",
+      "passed": true
+    },
+    {
+      "case": "unknown order",
+      "expected": "clarify",
+      "actual": "clarify",
+      "passed": true
+    },
+    {
+      "case": "other customer",
+      "expected": "clarify",
+      "actual": "clarify",
+      "passed": true
+    },
+    {
+      "case": "day30 unopened",
+      "expected": "eligible",
+      "actual": "eligible",
+      "passed": true
+    },
+    {
+      "case": "day30 original",
+      "expected": "eligible",
+      "actual": "eligible",
+      "passed": true
+    },
+    {
+      "case": "day30 used",
+      "expected": "human_review",
+      "actual": "human_review",
+      "passed": true
+    },
+    {
+      "case": "day31 unopened",
+      "expected": "ineligible",
+      "actual": "ineligible",
+      "passed": true
+    },
+    {
+      "case": "day31 original",
+      "expected": "ineligible",
+      "actual": "ineligible",
+      "passed": true
+    },
+    {
+      "case": "finalsale unopened",
+      "expected": "ineligible",
+      "actual": "ineligible",
+      "passed": true
+    },
+    {
+      "case": "finalsale used",
+      "expected": "ineligible",
+      "actual": "ineligible",
+      "passed": true
+    },
+    {
+      "case": "finalsale damage",
+      "expected": "human_review",
+      "actual": "human_review",
+      "passed": true
+    },
+    {
+      "case": "damage day7",
+      "expected": "human_review",
+      "actual": "human_review",
+      "passed": true
+    },
+    {
+      "case": "damage day8",
+      "expected": "human_review",
+      "actual": "human_review",
+      "passed": true
+    },
+    {
+      "case": "damage day30",
+      "expected": "human_review",
+      "actual": "human_review",
+      "passed": true
+    },
+    {
+      "case": "damage day31",
+      "expected": "human_review",
+      "actual": "human_review",
+      "passed": true
+    },
+    {
+      "case": "shipped",
+      "expected": "human_review",
+      "actual": "human_review",
+      "passed": true
+    },
+    {
+      "case": "refunded",
+      "expected": "human_review",
+      "actual": "human_review",
+      "passed": true
+    },
+    {
+      "case": "cancelled",
+      "expected": "human_review",
+      "actual": "human_review",
+      "passed": true
+    },
+    {
+      "case": "future delivery",
+      "expected": "human_review",
+      "actual": "human_review",
+      "passed": true
+    },
+    {
+      "case": "private damaged",
+      "expected": "clarify",
+      "actual": "clarify",
+      "passed": true
+    },
+    {
+      "case": "unknown damaged",
+      "expected": "clarify",
+      "actual": "clarify",
+      "passed": true
+    },
+    {
+      "case": "instruction attack",
+      "expected": "ineligible",
+      "actual": "ineligible",
+      "passed": true
+    },
+    {
+      "case": "finalsale attack",
+      "expected": "ineligible",
+      "actual": "ineligible",
+      "passed": true
+    },
+    {
+      "case": "private attack",
+      "expected": "clarify",
+      "actual": "clarify",
+      "passed": true
+    },
+    {
+      "case": "ambiguous request",
+      "expected": "clarify",
+      "actual": "clarify",
+      "passed": true
+    }
+  ]
+}

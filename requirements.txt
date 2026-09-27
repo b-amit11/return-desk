@@ -1,0 +1,5 @@
+streamlit>=1.45,<2
+pydantic>=2,<3
+python-dotenv>=1,<2
+groq>=0.30,<2
+pytest>=8,<10
