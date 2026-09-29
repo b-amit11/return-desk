@@ -82,6 +82,16 @@ Policy text and code are maintained together manually; automated consistency acr
 
 Useful next validation: a separately authored paraphrase test set for live extraction, supervised trials with support agents, persistent review records, and real authentication before any real data integration.
 
+## HubSpot CRM sandbox handoff
+
+After a reviewer acknowledges the deterministic recommendation, the local app can create a **HubSpot sandbox ticket** for cases that require an agent decision (`eligible` or `human_review`). The ticket includes the order reference, extracted structured fields, decision, cited policy clauses, and a clear no-refund notice. It deliberately excludes the raw customer message.
+
+1. Create a HubSpot developer test account and sandbox private app with permission to create tickets.
+2. Copy `.env.example` to `.env` and set `HUBSPOT_PRIVATE_APP_TOKEN` locally.
+3. Run the app normally, review a qualifying case, acknowledge the CRM handoff, and select **Create HubSpot review ticket**.
+
+The public demo never loads this token and cannot create tickets. The connector uses the HubSpot Tickets API directly; no token is committed to the repository. `python -m returndesk.evaluate` includes an offline connector evaluation, and `tests/test_hubspot.py` uses a fake gateway so testing cannot contact HubSpot.
+
 ## Public portfolio deployment
 
 Deploy `public_app.py` (not `app.py`) on Streamlit Community Cloud. It forces offline mode even if a Groq key is present, does not load `.env`, and removes the live mode control. Do not upload any secrets for this public demo.

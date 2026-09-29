@@ -2,6 +2,7 @@ import os
 import streamlit as st
 from dotenv import load_dotenv
 from returndesk.core import ROOT, POLICY, TODAY, workflow
+from returndesk.hubspot import HubSpotError, HubSpotTicketClient, submit_for_human_review
 PUBLIC_DEMO=os.getenv('RETURNDESK_PUBLIC_DEMO')=='1'
 if not PUBLIC_DEMO: load_dotenv(ROOT/'.env')
 st.set_page_config(page_title='ReturnDesk',page_icon='↩',layout='wide')
@@ -52,6 +53,15 @@ if r:
  if st.session_state.get('reviewed')==draft:
   st.success('Marked reviewed in this browser session. Nothing has been sent or refunded.')
   st.download_button('Download reviewed draft',draft,file_name='reviewed-response.txt')
+  if not PUBLIC_DEMO and os.getenv('HUBSPOT_PRIVATE_APP_TOKEN'):
+   st.caption('Optional CRM handoff: creates one HubSpot sandbox ticket containing the deterministic decision and policy citations. It never issues a refund.')
+   send_to_hubspot=st.checkbox('I approve creating this HubSpot sandbox ticket.',key='hubspot_ack_'+str(context))
+   if st.button('Create HubSpot review ticket',disabled=not send_to_hubspot):
+    try:
+     receipt=submit_for_human_review(r,HubSpotTicketClient.from_environment())
+     st.success(f"HubSpot review ticket created: {receipt['ticket_id']}")
+    except (HubSpotError,ValueError) as exc:
+     st.error(f"HubSpot ticket was not created: {exc}")
  with st.expander('Execution trace'):
   for step in r['trace']:st.write(step)
 with st.expander('All demo policy clauses'):
