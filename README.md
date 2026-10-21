@@ -1,6 +1,16 @@
 # ReturnDesk
 
+[![Tests](https://github.com/b-amit11/return-desk/actions/workflows/ci.yml/badge.svg)](https://github.com/b-amit11/return-desk/actions/workflows/ci.yml)
+
 A support-agent prototype that turns a return request into a policy-backed recommendation and a reviewable response draft. It combines LLM extraction with deterministic eligibility rules, customer-scoped order lookup, and exact policy citations.
+
+**Stack:** Python · Groq LLM API · Pydantic · SQLite · Streamlit · HubSpot Tickets API · Docker · pytest · GitHub Actions
+
+**Highlights**
+- The LLM only extracts three schema-constrained fields; **eligibility is decided by deterministic code**, so the model can never approve a refund.
+- Customer-scoped, parameterized SQL lookups: unknown and other customers' orders get the same response.
+- Every recommendation cites the exact policy clauses used; a human must review before anything leaves the app.
+- **38 tests** and 30/30 labeled decision cases, including prompt-injection examples.
 
 ## Problem and workflow
 
